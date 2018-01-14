@@ -38,7 +38,7 @@ namespace ConsoleApp3
 
         public override string ToString()
         {
-            return "radius = " + radius + "\ndiametre = " + diametre + "\ncircumference = 0" + circ + "\narea = " + area; 
+            return "radius = " + radius + "\ndiametre = " + diametre + "\ncircumference = 0" + circ + "\narea = " + area + '\n'; 
         }
     }
     class Rectangle
@@ -90,7 +90,7 @@ namespace ConsoleApp3
 
         public override string ToString()
         {
-            return "width = " + width + "\nheight = " + height + "\nperimeter = " + per + "\narea = " + area + "\ndiagonal = " + diagonal;
+            return "width = " + width + "\nheight = " + height + "\nperimeter = " + per + "\narea = " + area + "\ndiagonal = " + diagonal + '\n';
         }
     }
 }

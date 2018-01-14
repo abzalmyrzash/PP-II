@@ -15,6 +15,7 @@ namespace ConsoleApp3
 
             a.FindArea();
             a.FindPer();
+            a.FindDiagonal();
 
             b.FindDiam();
             b.FindCirc();
