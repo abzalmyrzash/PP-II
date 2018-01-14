@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    class circle
+    class Circle
     {
         int radius, diametre;
         double circ, area;
 
-        public circle()
+        public Circle()
         {
             radius = 5;
         }
 
-        public circle(int r)
+        public Circle(int r)
         {
             radius = r;
         }
 
-        public void findDiam()
+        public void FindDiam()
         {
             diametre = 2 * radius;
         }
 
-        public void findArea()
+        public void FindArea()
         {
             area = Math.PI * radius * radius;
         }
 
-        public void findCirc()
+        public void FindCirc()
         {
             circ = Math.PI * diametre;
         }
@@ -41,24 +41,26 @@ namespace ConsoleApp3
             return "radius = " + radius + "\ndiametre = " + diametre + "\ncircumference = 0" + circ + "\narea = " + area; 
         }
     }
-    class rectangle
+    class Rectangle
     {
         public int width, height;
         public int per, area;
 
-        public rectangle()
+        public double diagonal;
+
+        public Rectangle()
         {
             width = 4;
             height = 8;
         }
 
-        public rectangle(int w, int h)
+        public Rectangle(int w, int h)
         {
             width = w;
             height = h;
         }
         
-        public rectangle(int c, bool forWidth)
+        public Rectangle(int c, bool forWidth)
         {
             if (forWidth)
             {
@@ -71,19 +73,24 @@ namespace ConsoleApp3
             }
         }
 
-        public void findPer()
+        public void FindPer()
         {
             per = 2*(width + height);
         }
 
-        public void findArea()
+        public void FindArea()
         {
             area = width * height;
         }
 
+        public void FindDiagonal()
+        {
+            diagonal = Math.Sqrt(width * width + height * height);
+        }
+
         public override string ToString()
         {
-            return "width = " + width + "\nheight = " + height + "\nperimeter = " + per + "\narea = " + area;
+            return "width = " + width + "\nheight = " + height + "\nperimeter = " + per + "\narea = " + area + "\ndiagonal = " + diagonal;
         }
     }
 }

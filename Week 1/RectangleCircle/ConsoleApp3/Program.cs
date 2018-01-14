@@ -10,15 +10,15 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            rectangle a = new rectangle(9, true);
-            circle b = new circle();
+            Rectangle a = new Rectangle(9, true);
+            Circle b = new Circle();
 
-            a.findArea();
-            a.findPer();
+            a.FindArea();
+            a.FindPer();
 
-            b.findDiam();
-            b.findCirc();
-            b.findArea();
+            b.FindDiam();
+            b.FindCirc();
+            b.FindArea();
 
             Console.WriteLine(a);
             Console.WriteLine(b);
