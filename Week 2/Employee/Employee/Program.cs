@@ -10,37 +10,38 @@ namespace Employee
     class Employee
     {
         public string name;
-        public int wage;
-        double w;
-        public int initialWage;
-        private int daysWorked;
+        public double wage;
+        private int daysWorked, monthsWorked;
         public bool quitJob = false;
 
-        public Employee(string _name = "Basic Employee", int _wage = 500)
+        public Employee(string _name = "Basic Employee", double _wage = 500)
         {
             name = _name;
-            initialWage = _wage;
+            wage = _wage;
             daysWorked = 0;
         }
 
         public void Work()
         {
+            int daysBefore = daysWorked, monthsBefore;
             ConsoleKeyInfo btn = Console.ReadKey();
             if (btn.Key == ConsoleKey.W) daysWorked++;
-            else if (btn.Key == ConsoleKey.Escape) quitJob = true;
+            if (btn.Key == ConsoleKey.Escape) quitJob = true;
+
+            monthsWorked = daysWorked / 30;
+            monthsBefore = daysBefore / 30;
+
+            if(monthsWorked - monthsBefore == 1) wage = wage * 1.02;
         }
 
-        private void Wage()
+        public double Wage
         {
-            int monthWorked = daysWorked / 30;
-            double coefficient = Math.Pow(1.02, monthWorked);
-            w = initialWage * coefficient;
-            wage = Convert.ToInt32(w);
+            get { return wage; }
+            set { if (value >= 0) wage = value; }
         }
 
         public override string ToString()
         {
-            Wage();
             return "Name: " + name + "\nSalary: " + wage + "\nDays Worked: " + daysWorked + "\nQuit Job: " + quitJob;
         }
     }
@@ -49,14 +50,21 @@ namespace Employee
     {
         static void Main(string[] args)
         {
-            Employee e = new Employee();
+            string name = Console.ReadLine();
+
+            Employee e = new Employee(name);
+
+            e.Wage = 600;
+
             Console.WriteLine(e);
+
             while (!e.quitJob)
             {
                 e.Work();
                 Console.Clear();
                 Console.WriteLine(e);
             }
+
             Console.ReadKey();
         }
     }
