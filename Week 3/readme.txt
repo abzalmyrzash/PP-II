@@ -4,6 +4,6 @@ Also you can open files(only text files!) and see what is written in them. You a
 
 By pressing Escape you will quit the file. But Before that you will have three choices whether to save the changes you have made and whether not to do that, and whether you don't want to exit and just want to continue editing the file.
 
-You can open directories, as well as exiting it, and you press the same buttons as you do in file.
+You can open directories, as well as exiting them, and you press the same buttons as you do in file.
 
 The main parent directory is "C:\", so when you exit that directory, you will exit the program as well.
