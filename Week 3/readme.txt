@@ -1,4 +1,4 @@
-I have made the folders go first and also made it write the directory's path on the top, so it looks like Windows Explorer.
+I have made the folders go first and also made the program write the directory's path on the top, so it looks like Windows Explorer.
 
 Also you can open files(only text files!) and see what is written in them.
 You are able to edit the file's content by adding and deleting using Backspace(however, you can't move the cursor).
