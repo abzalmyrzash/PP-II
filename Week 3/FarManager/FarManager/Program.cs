@@ -13,6 +13,11 @@ namespace SimpleFarManager
 
         static void ShowState(DirectoryInfo dir, int pos)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine(dir.FullName + '\n');
+          
             DirectoryInfo[] d = dir.GetDirectories();
             FileInfo[] f = dir.GetFiles();
 
