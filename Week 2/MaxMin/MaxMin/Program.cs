@@ -13,9 +13,9 @@ namespace MaxMin
         {
             string path = @"C:\Users\abzal\desktop\PPIILabs\Week 2\MaxMin\MaxMin\NaborChisel.txt";
 
-            FileInfo file = new FileInfo(path);
-            FileStream inputfile = new FileStream(path, FileMode.Open);
-            StreamReader sr = new StreamReader(inputfile);
+            //FileInfo file = new FileInfo(path);
+            //FileStream inputfile = new FileStream(path, FileMode.Open);
+            StreamReader sr = new StreamReader(path);
 
             string[] numbers = sr.ReadLine().Split(' ');
             int max, min = max = int.Parse(numbers[0]);

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{353A6058-9808-4684-BFC6-AFF5C01DA311}</ProjectGuid>
+    <ProjectGuid>{065E421B-616F-422A-B23A-7D5AC1C16054}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MinimumPrime</RootNamespace>
-    <AssemblyName>MinimumPrime</AssemblyName>
+    <RootNamespace>FarManagerHelper</RootNamespace>
+    <AssemblyName>FarManagerHelper</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,10 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NaborChisel.txt" />
-    <Content Include="Otvet.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,13 +22,21 @@ namespace MinimumPrime
 
         static void Main(string[] args)
         {
-            string path = @"C:\users\abzal\Desktop\PPIILabs\Week 2\MinimumPrime\MinimumPrime\NaborChisel.txt";
-            FileStream input = new FileStream(path, FileMode.Open);
-            StreamReader sr = new StreamReader(input);
+            string path1 = @"C:\users\abzal\Desktop\PPIILabs\Week 2\MinimumPrime\MinimumPrime\NaborChisel.txt";
+            string path2 = @"C:\users\abzal\Desktop\PPIILabs\Week 2\MinimumPrime\MinimumPrime\Otvet.txt";
+
+            FileStream fs1 = new FileStream(path1, FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs1);
+
+            FileStream fs2 = new FileStream(path2, FileMode.Open, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs2);
 
             string[] nums = sr.ReadLine().Split(' ');
+            sr.Close();
 
             int[] primes = new int[nums.Length]; int j = 0;
+
+            bool ok = false;
 
             for(int i = 0; i < nums.Length; i++){
                 int n = int.Parse(nums[i]);
@@ -36,19 +44,26 @@ namespace MinimumPrime
                 {
                     primes[j] = n;
                     j++;
+                    ok = true;
                 }
             }
 
-            int minPrime = primes[0];
-
-            for(int i = 1; i < j; i++)
+            if (ok)
             {
-                if (primes[i] < minPrime) minPrime = primes[i];
+                int minPrime = primes[0];
+
+                for (int i = 1; i < j; i++)
+                {
+                    if (primes[i] < minPrime) minPrime = primes[i];
+                }
+
+
+                sw.WriteLine("Minimum Prime is " + minPrime);
+                sw.Close();
             }
 
-            Console.WriteLine(minPrime);
-
-            Console.ReadKey();
+            else sw.WriteLine("There are no primes!");
+            sw.Close();
         }
     }
 }
