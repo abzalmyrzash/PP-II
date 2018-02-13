@@ -15,8 +15,8 @@ namespace SimpleFarManager
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
-
-            Console.WriteLine(dir.FullName + '\n');
+            
+            Console.WriteLine(dir.FullName);
           
             DirectoryInfo[] d = dir.GetDirectories();
             FileInfo[] f = dir.GetFiles();
@@ -181,9 +181,11 @@ namespace SimpleFarManager
                                     if (option == 0)
                                     {
                                         StreamWriter sw = new StreamWriter(path2);
-                                        string[] lines = content.Split('\n');
-                                        foreach (string line in lines)
-                                            sw.WriteLine(line);
+                                        for(int i = 0; i < content.Length; i++)
+                                        {
+                                            if (content[i] == '\n') sw.WriteLine();
+                                            else sw.Write(content[i]);
+                                        }
                                         sw.Close();
                                     }
 
